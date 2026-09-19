@@ -590,35 +590,36 @@
     }
 
     .nav-logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
       text-decoration: none;
-    }
-
-    .logo-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-md);
-      background: linear-gradient(135deg, var(--cyan), var(--purple));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-code);
-      font-weight: 800;
-      font-size: 1.25rem;
-      color: #040814;
-      box-shadow: 0 0 18px var(--cyan-glow);
-    }
-
-    .logo-text {
-      font-family: var(--font-heading);
+      font-family: var(--font-code, 'Fira Code', 'JetBrains Mono', monospace);
+      font-size: 1.35rem;
       font-weight: 700;
-      font-size: 1.2rem;
-      color: var(--text-main);
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      user-select: none;
     }
 
-    .logo-text span {
+    .code-bracket {
+      color: var(--cyan);
+      text-shadow: 0 0 12px var(--cyan-glow);
+      font-weight: 700;
+    }
+
+    .code-name {
+      color: var(--text-main);
+      font-weight: 600;
+      margin: 0 0.15rem;
+      transition: var(--transition);
+    }
+
+    .nav-logo:hover .code-bracket {
+      text-shadow: 0 0 20px var(--cyan-glow);
+      color: #38bdf8;
+    }
+
+    .nav-logo:hover .code-name {
       color: var(--cyan);
     }
 
@@ -3142,9 +3143,8 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container nav-container">
-      <a href="#home" class="nav-logo">
-        <div class="logo-badge">SJ</div>
-        <div class="logo-text">Sneha <span>J</span></div>
+      <a href="#home" class="nav-logo" title="Sneha J Portfolio">
+        <span class="code-bracket">&lt;</span><span class="code-name">sneha</span>&nbsp;<span class="code-bracket">/&gt;</span>
       </a>
 
       <ul class="nav-menu">
